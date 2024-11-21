@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+        
+        .calculator {
+            width: 320px; /* Adjust width as needed */
+           background-color: #333;
+             border-radius: 12px; /* Slightly rounded to match display */
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                 position: relative;
+        }
+        
+        .display {
+            width: 90%; /* Adjust the width to fit within the calculator */
+          height: 70px;
+          background-color: #444;
+           color: #fff;
+           text-align: right;
+            padding: 15px;
+            font-size: 24px;
+            border: none;
+             border-radius: 8px; /* Matches calculator's rounded style */
+            margin: 0 auto 20px auto; /* Center the display inside the calculator */
+              box-shadow: inset 0px -2px 6px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .button {
+            width: 100%;
+            height: 60px;
+            font-size: 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .button.number {
+            background-color: #555;
+            color: #fff;
+        }
+        
+        .button.operator {
+            background-color: #ff9500;
+            color: #fff;
+        }
+        
+        .button.clear {
+            background-color: #d32f2f;
+            color: #fff;
+            grid-column: span 4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input placeholder="0" id="result" class="display" readonly />
+
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button onclick="calcScreenClear()" class="button clear">C</button>
+            
+            <!-- Row 2 -->
+            <button onclick="displayContent('7')" class="button number">7</button>
+            <button onclick="displayContent('8')" class="button number">8</button>
+            <button onclick="displayContent('9')" class="button number">9</button>
+            <button onclick="displayContent('/')" class="button operator">/</button>
+            
+            <!-- Row 3 -->
+            <button onclick="displayContent('4')" class="button number">4</button>
+            <button onclick="displayContent('5')" class="button number">5</button>
+            <button onclick="displayContent('6')" class="button number">6</button>
+            <button onclick="displayContent('*')" class="button operator">*</button>
+            
+            <!-- Row 4 -->
+            <button onclick="displayContent('1')" class="button number">1</button>
+            <button onclick="displayContent('2')" class="button number">2</button>
+            <button onclick="displayContent('3')" class="button number">3</button>
+            <button onclick="displayContent('-')" class="button operator">-</button>
+            
+            <!-- Row 5 -->
+            <button onclick="displayContent('0')" class="button number">0</button>
+            <button onclick="displayContent('+')" class="button operator">+</button>
+            <button onclick="calcOutput()" class="button operator" style="grid-column: span 2;">=</button>
+        </div>
+    </div>
+
+</body>
+<script src="./main.js"></script>
+</html>
